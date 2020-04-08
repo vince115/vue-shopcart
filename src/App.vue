@@ -1,28 +1,40 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <nav id="nav" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark rounded-0">
+     
+     <div class="collapse navbar-collapse container-fluid">
+     <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+
+     <ul class="nav navbar-nav">
+      <li class="active"><router-link to="/Home">HomeBB</router-link></li>
+      <li><router-link to="/about">About</router-link></li> 
+      <li><router-link to="/Shop">Shop</router-link></li>
+    </ul>
+    <ul class="nav navbar-nav float-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        
+    </ul>
+    <button class="btn btn-primary float-right"  data-toggle="modal" data-target="#shoppingCart">Cart</button>
+
+     </div>
+    </nav>
+
+    <router-view/>
+ 
+  </div>  
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<style lang="scss">
+@import 'bootstrap/scss/bootstrap';
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
-
-<style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+    
   margin-top: 60px;
+}
+#nav{
+  border:0;
 }
 </style>
